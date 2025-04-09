@@ -12,6 +12,7 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     ui->pb_reset->setEnabled(false);
 
+    //Lamda
     connect(ui->pb10, &QPushButton::clicked, [=](){ Add(10); });
     connect(ui->pb50, &QPushButton::clicked, [=](){ Add(50); });
     connect(ui->pb100, &QPushButton::clicked, [=](){ Add(100); });
@@ -75,6 +76,7 @@ void Widget::on_pb_tea300_clicked()
 }
 */
 
+//calculate all at once
 void Widget::Add(int diff){
     if (money + diff >= 0) { // 돈이 음수가 되지 않도록 체크
         money += diff;
@@ -86,6 +88,7 @@ void Widget::Add(int diff){
     }
 }
 
+//reset button with the change using separate dominations
 void Widget::on_pb_reset_clicked()
 {
     if (money > 0) {
