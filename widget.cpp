@@ -76,7 +76,7 @@ void Widget::on_pb_tea300_clicked()
 */
 
 void Widget::Add(int diff){
-    if (money + diff > 0) { // 돈이 음수가 되지 않도록 체크
+    if (money + diff >= 0) { // 돈이 음수가 되지 않도록 체크
         money += diff;
         ui->lcdNumber->display(money);
         ui->pb_reset->setEnabled(true);
@@ -92,8 +92,8 @@ void Widget::on_pb_reset_clicked()
         int m=money;
         int m500=m/500; m-=m500*500;
         int m100=m/100; m-=m100*100;
-        int m50=m/50; m-=m50*100;
-        int m10=m/10; m-=m10*100;
+        int m50=m/50; m-=m50*50;
+        int m10=m/10; m-=m10*10;
 
         QString message = QString("총 %1원이 반환되었습니다.\n\n[거스름돈]\n500원: %2개\n100원: %3개\n50원: %4개\n10원: %5개").arg(money).arg(m500).arg(m100).arg(m50).arg(m10);
         QMessageBox::information(this, "돈 반환", message);
