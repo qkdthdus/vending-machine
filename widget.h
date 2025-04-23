@@ -40,6 +40,8 @@ private slots:
     void on_pb_tea300_clicked();
 */
     void Add(int diff);
+    //diff is not a member var, So we need to declare diff explicitly
+    //But, diff were a memebr var, then we wouldnt need to declare "int diff" seperately
 
     void on_pb_reset_clicked();
 
